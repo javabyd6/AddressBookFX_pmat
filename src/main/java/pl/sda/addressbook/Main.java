@@ -1,6 +1,5 @@
 package pl.sda.addressbook;
 
-
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -8,7 +7,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import pl.sda.addressbook.controller.NewPersonViewController;
 import pl.sda.addressbook.controller.RootViewController;
 import pl.sda.addressbook.model.Person;
 
@@ -43,6 +41,7 @@ public class Main extends Application {
         RootViewController rootViewController = loader.getController();
         rootViewController.setMain(this);
         rootViewController.loadPerson();
+        rootViewController.setStage(primaryStage);
 
         primaryStage.setScene(new Scene(root));
         primaryStage.show();

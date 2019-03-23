@@ -13,7 +13,6 @@ import javafx.stage.Stage;
 import pl.sda.addressbook.Main;
 import pl.sda.addressbook.model.Person;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -52,6 +51,12 @@ public class RootViewController implements Initializable {
     private Button saveButton;
 
     private Main main;
+
+    private Stage getStage() {
+        return stage;
+    }
+
+    private Stage stage;
 
     private Main getMain() {
         return main;
@@ -92,10 +97,14 @@ public class RootViewController implements Initializable {
         loader.load();
 
         Parent root = loader.getRoot();
-        NewPersonViewController newPersonViewController = loader.getController();
-        newPersonViewController.setMain(main);
+        NewPersonAddController newPersonViewController = loader.getController();
+        newPersonViewController.setMain(this.main);
 
         secondStage.setScene(new Scene(root));
         secondStage.show();
+    }
+
+    public void setStage(Stage primaryStage) {
+        this.stage = primaryStage;
     }
 }

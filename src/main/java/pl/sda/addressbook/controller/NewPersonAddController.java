@@ -1,8 +1,6 @@
 package pl.sda.addressbook.controller;
 
-import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -12,7 +10,7 @@ import pl.sda.addressbook.model.Person;
 /**
  * @author pmatusiak
  */
-public class NewPersonViewController {
+public class NewPersonAddController {
 
     @FXML
     private TextField nameField;
@@ -42,13 +40,15 @@ public class NewPersonViewController {
         this.main = main;
     }
 
-    public void saveNewPerson(){
-        Person person = new Person(nameField.getText(), lastnameField.getText(), addressField.getText(), telField.getText(), postcodeField.getText(),cityField.getText());
-        main.getPersonList().add(person);
+    public void saveNewPerson() {
+        Person person = new Person(nameField.getText(), lastnameField.getText(), addressField.getText(), telField.getText(), postcodeField.getText(), cityField.getText());
+        getMain().getPersonList().add(person);
+        System.out.println(person.toString());
         Stage stage = (Stage) newPersonSaveButton.getScene().getWindow();
         stage.close();
     }
-    public void escape(){
+
+    public void escape() {
         Stage stage = (Stage) newPersonEscButton.getScene().getWindow();
         stage.close();
     }

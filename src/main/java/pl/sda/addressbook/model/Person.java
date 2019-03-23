@@ -68,6 +68,18 @@ public class Person {
         return tel;
     }
 
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name=" + name +
+                ", lastname=" + lastname +
+                ", address=" + address +
+                ", tel=" + tel +
+                ", postCode=" + postCode +
+                ", city=" + city +
+                '}';
+    }
+
     public void setTel(String tel) {
         this.tel.set(tel);
     }
