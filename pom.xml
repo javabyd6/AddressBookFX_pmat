@@ -25,7 +25,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>pl.sda.lambda.Main</mainClass>
+                            <mainClass>pl.sda.addressbook.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
