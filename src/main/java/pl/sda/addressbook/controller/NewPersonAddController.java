@@ -43,7 +43,6 @@ public class NewPersonAddController {
     public void saveNewPerson() {
         Person person = new Person(nameField.getText(), lastnameField.getText(), addressField.getText(), telField.getText(), postcodeField.getText(), cityField.getText());
         getMain().getPersonList().add(person);
-        System.out.println(person.toString());
         Stage stage = (Stage) newPersonSaveButton.getScene().getWindow();
         stage.close();
     }

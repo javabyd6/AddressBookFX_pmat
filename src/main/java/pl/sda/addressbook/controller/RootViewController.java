@@ -86,7 +86,6 @@ public class RootViewController implements Initializable {
         postcodeLabel.setText(person.getPostCode());
         telephoneLabel.setText(person.getTel());
         cityLabel.setText(person.getCity());
-        System.out.println(person);
     }
 
 
