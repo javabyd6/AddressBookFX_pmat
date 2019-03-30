@@ -65,7 +65,7 @@
                           <buttons>
                               <Button onMouseClicked="#newPerson" fx:id="newButton" mnemonicParsing="false" text="New" />
                               <Button fx:id="editButton" mnemonicParsing="false" text="Edit" />
-                            <Button fx:id="deleteButton" mnemonicParsing="false" text="Delete" />
+                            <Button onMouseClicked="#setDeleteButton" fx:id="deleteButton" mnemonicParsing="false" text="Delete" />
                               <Button fx:id="saveButton" mnemonicParsing="false" text="Save" />
                           </buttons>
                         </ButtonBar>

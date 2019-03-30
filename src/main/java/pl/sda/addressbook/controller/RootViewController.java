@@ -1,5 +1,6 @@
 package pl.sda.addressbook.controller;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -11,9 +12,13 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 import pl.sda.addressbook.Main;
+import pl.sda.addressbook.Parser;
 import pl.sda.addressbook.model.Person;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -66,7 +71,7 @@ public class RootViewController implements Initializable {
         this.main = main;
     }
 
-    public void loadPerson(){
+    public void loadPerson() {
         System.out.println(getMain().getPersonList());
         personTableView.setItems(getMain().getPersonList());
         nameCol.setCellValueFactory(c -> c.getValue().nameProperty());
@@ -75,7 +80,6 @@ public class RootViewController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        System.out.println(this.main.getPersonList());
     }
 
     public void selectedPerson() {
@@ -101,6 +105,13 @@ public class RootViewController implements Initializable {
 
         secondStage.setScene(new Scene(root));
         secondStage.show();
+    }
+
+    public void setDeleteButton() throws IOException {
+        Parser parser = new Parser();
+        List<Person> personList = new ArrayList<>();
+        personList.addAll(parser.readFileWithList());
+        main.getPersonList().addAll(personList);
     }
 
     public void setStage(Stage primaryStage) {

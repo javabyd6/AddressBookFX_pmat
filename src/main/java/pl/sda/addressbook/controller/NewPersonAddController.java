@@ -7,6 +7,8 @@ import javafx.stage.Stage;
 import pl.sda.addressbook.Main;
 import pl.sda.addressbook.model.Person;
 
+import java.io.IOException;
+
 /**
  * @author pmatusiak
  */
@@ -40,7 +42,7 @@ public class NewPersonAddController {
         this.main = main;
     }
 
-    public void saveNewPerson() {
+    public void saveNewPerson() throws IOException {
         Person person = new Person(nameField.getText(), lastnameField.getText(), addressField.getText(), telField.getText(), postcodeField.getText(), cityField.getText());
         getMain().getPersonList().add(person);
         Stage stage = (Stage) newPersonSaveButton.getScene().getWindow();

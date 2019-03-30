@@ -10,6 +10,8 @@ import javafx.stage.Stage;
 import pl.sda.addressbook.controller.RootViewController;
 import pl.sda.addressbook.model.Person;
 
+import java.io.IOException;
+
 /**
  * @author pmatusiak
  */
@@ -22,7 +24,7 @@ public class Main extends Application {
         personList.add(new Person("Jan", "Kowalski", "adres", "123", "87-100", "Bdg"));
     }
 
-    public ObservableList<Person> getPersonList(){
+    public ObservableList<Person> getPersonList() {
         return personList;
     }
 
